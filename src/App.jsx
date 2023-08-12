@@ -4,7 +4,7 @@ import Catalogue from "./Components/Catalogue";
 import DescriptionPage from "./Components/DescriptionPage";
 import Cart from "./Components/Cart";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./Components/Navbar";
+// import Navbar from "./Components/Navbar";
 import { useState } from "react";
 import Checkout from "./Components/Checkout";
 import ThankYou from "./Components/ThankYou";
@@ -15,7 +15,7 @@ function App() {
 
   return (
     <Router>
-      <Navbar cartCount={cartCount} />
+      {/* <Navbar cartCount={cartCount} /> */}
       <Routes>
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/" element={<Home cartCount={cartCount} />} />

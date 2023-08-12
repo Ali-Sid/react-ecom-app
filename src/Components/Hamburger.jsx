@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import { IconButton, Drawer, List, ListItem, ListItemText, Link } from '@mui/material';
+import { IconButton, Drawer, List, ListItem, ListItemText } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { LogoutOutlined } from '@mui/icons-material';
+import { Link as NavLink } from 'react-router-dom';
 
 
 const HamburgerMenu = () => {
@@ -27,14 +28,14 @@ const HamburgerMenu = () => {
           <ListItem Button component="a" href="/" onClick={closeMenu} style={{color: "#0a0a0a"}}>
             <ListItemText primary="Home" />
           </ListItem>
-          <ListItem Button component="a" href="/catalogue" onClick={closeMenu} style={{color: "#0a0a0a"}}>
-            <ListItemText primary="Shop" />
+          <ListItem Button onClick={closeMenu} style={{color: "#0a0a0a"}}>
+            <NavLink to="/catalogue" style={{color: "#0a0a0a"}}>Shop</NavLink>
           </ListItem>
-          <ListItem Button component="a" href="/login" onClick={closeMenu} style={{color: "#0a0a0a"}}>
-            <ListItemText primary="Logout" />
-            <Link href="/login" style={{ color: "#0a0a0a" }}>
+          <ListItem Button onClick={closeMenu} style={{color: "#0a0a0a", justifyContent: "space-between"}}>
+            <NavLink to="/login" style={{color: "#0a0a0a"}}>Logout</NavLink>
+            <NavLink to="/login" style={{ color: "#0a0a0a" }}>
               <LogoutOutlined />
-            </Link>
+            </NavLink>
           </ListItem>
         </List>
       </Drawer>

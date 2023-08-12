@@ -26,7 +26,6 @@
   border-radius: 50%;
 }
 
-
 a {
   font-weight: 500;
   color: #646cff;
@@ -36,8 +35,14 @@ a:hover {
   color: #535bf2;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
+
 body {
-  /* margin: 0; */
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -48,6 +53,10 @@ body {
   font-family: "Poppins", sans-serif;
   background-color: #f1f1f1;
   color: #0a0a0a;
+  overflow-x: hidden;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 h1 {
@@ -73,7 +82,6 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
-
 
 img {
   width: 100%;
@@ -120,7 +128,6 @@ img {
   transform: scale(1.02); /* Enlarge the card slightly on hover */
 }
 
-
 /* CSS for mobile view */
 .show-menu {
   display: block;
@@ -132,6 +139,17 @@ img {
 
 .navbar-hamburger {
   display: inline-block;
+}
+
+/* Media query for mobile view */
+@media (max-width: 768px) {
+  .navbar {
+    /* Adjust the navbar height, padding, or positioning for mobile */
+    position: sticky;
+    top: 0;
+    padding: 10px 0;
+    /* ... other mobile styles ... */
+  }
 }
 
 @media (prefers-color-scheme: light) {

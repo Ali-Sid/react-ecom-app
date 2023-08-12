@@ -11,7 +11,7 @@ import { ShoppingBasketOutlined, Delete } from "@mui/icons-material";
 import { Link } from "@mui/material";
 import { useState, useEffect } from "react";
 import HamburgerMenu from "./Hamburger";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link as NavLink } from "react-router-dom";
 import { PropTypes } from "prop-types";
 
 
@@ -84,9 +84,9 @@ function Navbar({ cartCount }) {
               <Link href="/" style={{ color: "#0a0a0a" }}>
                 Home
               </Link>
-              <Link href="/catalogue" style={{ color: "#0a0a0a" }}>
+              <NavLink to="/catalogue" style={{ color: "#0a0a0a", textDecoration: "underline" }}>
                 Shop
-              </Link>
+              </NavLink>
             </div>
           )}
         </div>
@@ -109,9 +109,9 @@ function Navbar({ cartCount }) {
         {/* Pass the cart items as props */}
         {!isMobile ? (
           <div>
-            <Link href="/login" style={{ color: "#0a0a0a" }}>
+            <NavLink to="/login" style={{ color: "#0a0a0a" }}>
               Logout
-            </Link>
+            </NavLink>
           </div>
         ) : (
           <div>

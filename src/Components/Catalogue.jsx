@@ -16,7 +16,17 @@ const Catalogue = ({cartCount}) => {
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
+
+      // Add overflow-x: hidden to body if the window width is less than the breakpoint
+      if (window.innerWidth < breakpoint) {
+        document.body.style.overflowX = "hidden";
+      } else {
+        document.body.style.overflowX = "auto";
+      }
+
     };
+
+    handleResize();
 
     window.addEventListener("resize", handleResize);
 
@@ -49,13 +59,14 @@ const Catalogue = ({cartCount}) => {
 
   return (
     <>
-      <Navbar cartCount={cartCount}/>
+      <Navbar cartCount={cartCount} />
       <div
         style={{
           display: "flex",
           flexDirection: windowWidth < breakpoint ? "column" : "row",
           marginTop: "50px",
           minHeight: "calc(100vh - 50px)",
+          width: "100%"
         }}
       >
         <div style={{ flex: "0 0 200px", padding: "20px" }}>
@@ -64,7 +75,6 @@ const Catalogue = ({cartCount}) => {
             style={{
               display: "flex",
               flexDirection: windowWidth < breakpoint ? "row" : "column",
-              gap: "10px",
             }}
           >
             <FormControlLabel
@@ -109,8 +119,8 @@ const Catalogue = ({cartCount}) => {
             />
           </div>
         </div>
-        <div style={{ flex: "1", padding: "10px" }}>
-          <h2>Product Catalogue</h2>
+        <div style={{ flex: "1", padding: "20px"}}>
+          <h2 style={{textAlign: windowWidth < breakpoint && "center"}}>Product Catalogue</h2>
           {/* <Box mb={8}  sx={{height: "50vh", position: "relative"}}><img style={{position: "absolute", top: "0", width: "100%", height: "100%", objectFit: "cover", objectPosition: "center -10px"}} src="src/assets/pexels-shvets-production-9775889.jpg" alt="men wearing tshirts" /></Box> */}
           <Grid container spacing={2} style={{ justifyContent: "center" }}>
             {filteredProducts.map((product) => (

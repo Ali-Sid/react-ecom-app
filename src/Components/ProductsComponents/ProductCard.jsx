@@ -8,7 +8,7 @@ function ProductCard({ productId, imageUrl, name, price, imageHeight, category }
       <Link to={`/product/${productId}`} style={{ textDecoration: "none" }} onClick={() => window.scrollTo(0, 0)}>
         <Card
           className="product-card"
-          style={{ height: "100%", display: "flex", flexDirection: "column" }}
+          style={{ height: "100%", display: "flex", flexDirection: "column", justifyContent: "center" }}
         >
           <CardMedia
             component="img"
